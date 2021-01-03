@@ -1,0 +1,6 @@
+framework module YWDatePickerView {
+  umbrella header "YWDatePickerView-umbrella.h"
+
+  export *
+  module * { export * }
+}

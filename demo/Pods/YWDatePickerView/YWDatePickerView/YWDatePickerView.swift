@@ -34,7 +34,7 @@ struct YWDatePickerModel {
     }
 }
 
-public class YWDatePickerView: UIView {
+class YWDatePickerView: UIView {
 
     public var currentDate: Date = Date() {
         didSet {

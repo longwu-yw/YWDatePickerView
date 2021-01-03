@@ -1,0 +1,10 @@
+source 'https://github.com/CocoaPods/Specs.git'
+platform:ios,                   ‘11.0’
+
+use_frameworks!
+target 'demo' do 
+
+pod 'YWDatePickerView', '~> 0.0.1'
+
+
+end

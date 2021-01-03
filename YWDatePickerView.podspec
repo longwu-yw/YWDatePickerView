@@ -2,7 +2,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = 'YWDatePickerView'
-  spec.version      = '0.0.1'
+  spec.version      = '0.1.0'
   spec.summary      = '简单易用的日期选择控件'
   spec.description  = 'YWDatePickerView包含页面弹出和输入框InputView两种展现形式，简单易用。'
 
