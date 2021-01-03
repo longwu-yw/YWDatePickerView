@@ -14,7 +14,7 @@ public enum YWDatePickerStyle {
     case DateStyle_HourMinute
 }
 
-struct YWDatePickerModel {
+public struct YWDatePickerModel {
     var year = ""
     var month = ""
     var day = ""
@@ -333,8 +333,8 @@ public class YWDatePickerView: UIView {
 
 }
 
-extension YWDatePickerView: UIPickerViewDataSource {
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+public extension YWDatePickerView: UIPickerViewDataSource {
+    private func numberOfComponents(in pickerView: UIPickerView) -> Int {
         switch pickerStyle {
             case .DateStyle_YearMonth, .DateStyle_HourMinute:
                 return 2
@@ -345,7 +345,7 @@ extension YWDatePickerView: UIPickerViewDataSource {
         }
     }
     
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    private func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         switch pickerStyle {
             case .DateStyle_YearMonth:
                 if component == 0 {
@@ -392,8 +392,8 @@ extension YWDatePickerView: UIPickerViewDataSource {
     }
 }
 
-extension YWDatePickerView: UIPickerViewDelegate {
-    func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
+public extension YWDatePickerView: UIPickerViewDelegate {
+    private func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
         switch pickerStyle {
         case .DateStyle_YearMonthDayHourMinute:
             if component == 0 { return 100 } else { return 50 }
@@ -402,11 +402,11 @@ extension YWDatePickerView: UIPickerViewDelegate {
         }
     }
     
-    func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
+    private func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
         40
     }
     
-    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+    private func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         
         var titleLab: UILabel
         if let label = view as? UILabel {
@@ -449,7 +449,7 @@ extension YWDatePickerView: UIPickerViewDelegate {
         return titleLab
     }
     
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    private func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         switch pickerStyle {
             case .DateStyle_YearMonth:
                 if component == 0 {
@@ -495,7 +495,7 @@ extension YWDatePickerView: UIPickerViewDelegate {
         return ""
     }
     
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+    private func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         switch pickerStyle {
             case .DateStyle_YearMonth:
                 if component == 0 {
